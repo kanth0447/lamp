@@ -32,7 +32,7 @@
 
 - stat: 
     path: /root/.my.cnf
-    register: sym
+  register: sym
 
 - set_fact:
     mysql_root_pw: "{{ masterpassword }}"
