@@ -47,7 +47,8 @@
   tags: my_cnf
 
 - name: Set the root password for MySQL Database
-  command: mysql -u root --connect-expired-password --execute="SET PASSWORD = PASSWORD('{{ masterpassword }}');"
+  command: "debconf-set-selections <<< 'mysql-server mysql-server/root_password password {{masterpassword}}'"
+#command: mysql -u root --connect-expired-password --execute="SET PASSWORD = PASSWORD('{{ masterpassword }}');"
     
 - set_fact:
     mysql_root_pw: "{{ masterpassword }}"
