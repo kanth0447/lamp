@@ -3,6 +3,7 @@
 
 - name: Apply for common configuration to all the nodes
   hosts: all
+  become: yes
   remote_user: ansible
 
   roles:
@@ -10,6 +11,7 @@
    
 - name: deploy MySQL and configure databases
   hosts: db
+  become: yes
   remote_user: ansible
    
   roles:
@@ -17,6 +19,7 @@
    
 - name: deploy Apache, PHP and configure website code
   hosts: web
+  become: yes
   remote_user: ansible
    
   roles:
