@@ -1,0 +1,23 @@
+---
+# CentOS 7 LAMP Stack
+
+- name: Apply for common configuration to all the nodes
+  hosts: all
+  remote_user: root
+
+  roles:
+   - common
+   
+- name: deploy MySQL and configure databases
+  hosts: db
+  remote_user: root
+   
+  roles:
+   - db
+   
+- name: deploy Apache, PHP and configure website code
+  hosts: web
+  remote_user: root
+   
+  roles:
+   - web
