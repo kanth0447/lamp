@@ -3,6 +3,11 @@
 
 # this playbook is to perform common tasks
 
+- name: Install firewalld
+  yum:
+    name: firewalld
+    state: present
+
 - name: Enable firewall on all the hosts
   service:
     name: firewalld
