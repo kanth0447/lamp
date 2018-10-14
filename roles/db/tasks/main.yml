@@ -41,7 +41,8 @@
 
 - name: install .my.cnf with credentials
   template: 
-    src: my.cnf.j2 dest=/root/.my.cnf
+    src: my.cnf.j2 
+    dest: /root/.my.cnf
     mode: 0400
   tags: my_cnf
 
